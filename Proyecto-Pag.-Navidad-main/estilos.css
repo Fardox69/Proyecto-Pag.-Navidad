@@ -1,0 +1,353 @@
+
+/* ===== ESTILOS GENERALES ===== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #18121f;
+    color: #f5e9dc;
+    line-height: 1.6;
+}
+
+/* ===== ENCABEZADO ===== */
+
+header {
+    background-color: #25172f;
+    padding: 20px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    border-bottom: 3px solid #ef8d27;
+}
+
+header h1 {
+    color: #ffb347;
+    font-size: 28px;
+}
+
+/* ===== MENÚ DE NAVEGACIÓN ===== */
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffb347;
+}
+
+/* ===== PORTADA ===== */
+
+#inicio {
+    min-height: 550px;
+
+    background:
+        linear-gradient(
+            rgba(24, 18, 31, 0.65),
+            rgba(24, 18, 31, 0.85)
+        ),
+        url("imagenes/portada.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 60px 20px;
+}
+
+#inicio h2 {
+    font-size: 42px;
+    color: #ffb347;
+    max-width: 850px;
+    margin-bottom: 20px;
+}
+
+#inicio p {
+    font-size: 19px;
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+/* ===== BOTÓN DE PORTADA ===== */
+
+#inicio a {
+    display: inline-block;
+    background-color: #ef8d27;
+    color: #211525;
+
+    padding: 14px 28px;
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: background-color 0.3s,
+                transform 0.3s;
+}
+
+#inicio a:hover {
+    background-color: #ffb347;
+    transform: translateY(-4px);
+}
+
+/* ===== ADAPTACIÓN A CELULARES ===== */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    #inicio {
+        min-height: 450px;
+    }
+
+    #inicio h2 {
+        font-size: 30px;
+    }
+
+    #inicio p {
+        font-size: 16px;
+    }
+}
+
+/* ===== ESTILO DE LAS SECCIONES ===== */
+
+#historia,
+#ofrenda,
+#tradiciones {
+    padding: 70px 30px;
+    text-align: center;
+}
+
+#historia h2,
+#ofrenda h2,
+#tradiciones h2 {
+    font-size: 32px;
+    color: #ffb347;
+    margin-bottom: 25px;
+}
+
+/* ===== HISTORIA ===== */
+
+#historia {
+    background-color: #25172f;
+}
+
+#historia p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* ===== OFRENDA ===== */
+
+#ofrenda {
+    background-color: #18121f;
+}
+
+#ofrenda > p {
+    max-width: 700px;
+    margin: 0 auto 35px;
+}
+
+/* CONTENEDOR DE TARJETAS */
+
+.contenedor-ofrenda {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* DISEÑO DE CADA TARJETA */
+
+.contenedor-ofrenda article {
+    background-color: #33233e;
+    padding: 30px 20px;
+    border-radius: 15px;
+    border: 1px solid #754c87;
+    transition: transform 0.3s,
+                box-shadow 0.3s;
+}
+
+.contenedor-ofrenda article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(239, 141, 39, 0.25);
+}
+
+.contenedor-ofrenda h3 {
+    color: #ffb347;
+    margin-bottom: 15px;
+}
+
+/* ===== TRADICIONES ===== */
+
+#tradiciones {
+    background-color: #25172f;
+}
+
+.contenedor-tradiciones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contenedor-tradiciones article {
+    background-color: #33233e;
+    padding: 30px 20px;
+    border-radius: 15px;
+    border-bottom: 4px solid #ef8d27;
+    transition: transform 0.3s;
+}
+
+.contenedor-tradiciones article:hover {
+    transform: translateY(-8px);
+}
+
+.contenedor-tradiciones h3 {
+    color: #ffb347;
+    margin-bottom: 15px;
+}
+
+/* ===== DISEÑO RESPONSIVO ===== */
+
+@media (max-width: 768px) {
+
+    .contenedor-ofrenda,
+    .contenedor-tradiciones {
+        grid-template-columns: 1fr;
+    }
+
+    #historia,
+    #ofrenda,
+    #tradiciones {
+        padding: 45px 20px;
+    }
+
+    #historia h2,
+    #ofrenda h2,
+    #tradiciones h2 {
+        font-size: 27px;
+    }
+}
+
+/* ===== GALERÍA DE IMÁGENES ===== */
+
+#galeria {
+    background-color: #18121f;
+    padding: 70px 30px;
+    text-align: center;
+}
+
+#galeria h2 {
+    font-size: 32px;
+    color: #ffb347;
+    margin-bottom: 20px;
+}
+
+#galeria p {
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.contenedor-galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contenedor-galeria img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #754c87;
+    transition: transform 0.3s;
+}
+
+.contenedor-galeria img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== PIE DE PÁGINA ===== */
+
+footer {
+    background-color: #25172f;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 3px solid #ef8d27;
+}
+
+footer p {
+    color: #f5e9dc;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* ===== ADAPTACIÓN A PANTALLAS ===== */
+
+@media (max-width: 900px) {
+    .contenedor-galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-galeria img {
+        height: 250px;
+    }
+}
+
+html {
+    scroll-padding-top: 110px;
+}
